@@ -5,3 +5,6 @@ load-packages:
 .PHONY: create-image
 create-image: load-packages
 	mkisofs -o ./images/utils_packages.iso ./package-loader/packages 
+
+.PHONY: connect
+	docker compose up
