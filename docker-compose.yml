@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ipmi-kvm:
+    image: solarkennedy/ipmi-kvm-docker
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./images:/root/images

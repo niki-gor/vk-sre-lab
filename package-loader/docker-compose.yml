@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  package-loader:
+    image: debian:10.13-slim
+    working_dir: /packages
+    volumes:
+      - ./packages:/packages
+    command: >
+      /bin/sh -c "apt-get update \
+      && apt-get -y --download-only install \
+      net-tools bird bird-bgp lldpd \
+      && mv /var/cache/apt/archives/*.deb /packages"
