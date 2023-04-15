@@ -6,5 +6,6 @@ load-packages:
 create-image: load-packages
 	mkisofs -o ./images/utils_packages.iso ./package-loader/packages 
 
-.PHONY: connect
+.PHONY: connect-ipmi
+connect-ipmi:
 	docker compose up
